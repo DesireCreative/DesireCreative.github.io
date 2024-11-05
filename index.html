@@ -7,20 +7,19 @@
   <body>
     <main></main>
     <script>
-      let logoImage = "https://i.imgur.com/fRflgW3.png";
-	  let rayLogoImage = "https://i.imgur.com/HfwCq8j.png";
-      let logo;
-	  let rayLogo;
-      let button2, button;
-      let mouseClick = false;
-      let showLogo = true;
-      let gamesPageShow = false;
-	  let funkyMonkeyIcon;
-	  let copyRight = "copyright of desire creative and ray game 2024";
-	  let controllerImage = "https://i.imgur.com/X3031nS.png";
-	  let controller;
-	  let W_W = 1280;
-	  let W_H = 720;
+      var logoImage = "https://i.imgur.com/fRflgW3.png";
+	  var rayLogoImage = "https://i.imgur.com/HfwCq8j.png";
+      var logo;
+	  var rayLogo;
+      var button2, button;
+      var mouseClick = false;
+      var showLogo = true;
+      var gamesPageShow = false;
+	  var funkyMonkeyIcon;
+	  var controllerImage = "https://i.imgur.com/X3031nS.png";
+	  var controller;
+	  var W_W = 1920;
+	  var W_H = 1080;
 
       function preload() {
         logo = loadImage(logoImage);
@@ -30,7 +29,7 @@
       }
 
       function setup() {
-        createCanvas(1280, 720);
+        createCanvas(1920, 1080);
         logo.resize(190, 143);
         gamesButton();
         appsButton();
@@ -65,7 +64,7 @@
 
       function gamesButton() {
         button2 = createButton('Games');
-        button2.position(333, 221);
+        button2.position(333, 500);
         button2.mousePressed(() => {
           mouseClick = true;
           gamesPageShow = true;
@@ -75,7 +74,7 @@
 
       function appsButton() {
         button = createButton('Apps');
-        button.position(582, 221);
+        button.position(582, 500);
         button.mousePressed(() => {
           mouseClick = true;
           handleClick();
@@ -83,7 +82,7 @@
       }
 	  
 	  function homeButton(){
-		let button3 = createButton("");
+		var button3 = createButton("");
 		button3.position(0, 0); 
 		button3.size(logo.width, logo.height); 
 		button3.style('background-color', 'transparent');
@@ -93,20 +92,14 @@
 	  }
 	  
 	  function rayGameLogo(){
-		image(rayLogo, 2, 5);
+		image(rayLogo, 0, 99);
 		rayLogo.resize(305, 229);
 	  }
 	  
 	  function drawController(){
-		image(controller, W_W/2, W_H/2);
-		controller.resize(243, 136.7);
+		image(controller, 1055, -1);
+		controller.resize(243, 136);
 	  }
-
-	  function drawUiDrawings(){
-		drawController();
-		rayGameLogo();
-	  }
-	 drawUiDrawings();
 
       function handleClick() {
         console.log("Button clicked!");
